@@ -130,5 +130,6 @@ vector<NombreCampo> Registro::vectorCampos() const {
         res.push_back((*it).first);
         it++;
     }
+    return res;
 }
 

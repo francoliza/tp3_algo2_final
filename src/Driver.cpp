@@ -73,7 +73,7 @@ Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el 
                 DiccValores campo2 = t2.DiccCampos()[t2.campoClave()];
                 if(campo1.size() < campo2.size()){
                     vector<Registro> vecR = t1.registrosTotales();
-                    for(int i = 0; i<vecR.size(); i++){
+                    for(unsigned int i = 0; i<vecR.size(); i++){
                         if(campo2.count(vecR[i][t1.campoClave()])==1){
                             Registro r1 = campo1[vecR[i][t1.campoClave()]][0];
                             Registro r2 = campo2[vecR[i][t1.campoClave()]][0];
@@ -83,7 +83,7 @@ Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el 
                     }
                 }else{
                     vector<Registro> vecR = t2.registrosTotales();
-                    for(int i = 0; i<vecR.size(); i++){
+                    for(unsigned int i = 0; i<vecR.size(); i++){
                         if(campo1.count(vecR[i][t2.campoClave()])==1){
                             Registro r1 = campo1[vecR[i][t2.campoClave()]][0];
                             Registro r2 = campo2[vecR[i][t2.campoClave()]][0];
@@ -138,7 +138,7 @@ Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el 
             DiccValores campo2 = t2.DiccCampos()[t2.campoClave()];
             if (campo1.size() < campo2.size()) {
                 vector<Registro> vecR = t1.registrosTotales();
-                for (int i = 0; i < vecR.size(); ++i) {
+                for (unsigned int i = 0; i < vecR.size(); ++i) {
                     if (campo2.count(vecR[i][t1.campoClave()]) == 1) {
                         Registro r1 = campo1[vecR[i][t1.campoClave()]][0];
                         Registro r2 = campo2[vecR[i][t1.campoClave()]][0];
@@ -149,7 +149,7 @@ Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el 
                 }
             } else {
                 vector<Registro> vecR = t2.registrosTotales();
-                for (int i = 0; i < vecR.size(); ++i) {
+                for (unsigned int i = 0; i < vecR.size(); ++i) {
                     if (campo1.count(vecR[i][t2.campoClave()]) == 1) {
                         Registro r1 = campo1[vecR[i][t2.campoClave()]][0];
                         Registro r2 = campo2[vecR[i][t2.campoClave()]][0];
@@ -162,8 +162,8 @@ Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el 
         }
         sub1 = consultar(q.subconsulta1());
         sub2 = consultar(q.subconsulta2());
-        for (int i = 0; i < sub1.size(); ++i) {
-            for (int j = 0; j < sub2.size(); ++j) {
+        for (unsigned int i = 0; i < sub1.size(); ++i) {
+            for (unsigned int j = 0; j < sub2.size(); ++j) {
                 if(sub1[i] == sub2[j]){
                     res.push_back(sub1[i]);
                 }
