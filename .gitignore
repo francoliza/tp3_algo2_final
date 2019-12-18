@@ -1,0 +1,7 @@
+#archivos a ingnorar
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+#carpetas
+CMakeFiles/*
