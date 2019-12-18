@@ -16,7 +16,7 @@ public:
     set<NombreCampo> campos() const; 				// no hay campos repetidos
     vector<NombreCampo> vectorCampos() const;
     Valor& operator[](const NombreCampo& campo); 	// muy importante, devulve una referencia modificable
-    //bool operator==(Registro reg);
+    bool operator==(Registro reg);
     Registro concatenarRegistros(Registro reg1, Registro reg2);
     bool campoDefinido(NombreCampo name);
 	//---------------------SOLO PARA TEST

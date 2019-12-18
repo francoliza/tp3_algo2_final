@@ -79,11 +79,11 @@ void Registro::printRegistro(){
         cout << "campo: " << datos[i].first << ", valor: " << datos[i].second << endl;
     }
 }
-/*
+
 bool Registro::operator==(Registro reg) {
     return listaRegistro() == reg.listaRegistro();
 }
-*/
+
 
 bool Registro::campoDefinido(NombreCampo name){
     bool res = false;

@@ -55,7 +55,6 @@ void Tabla::insertarRegistro(Registro reg){ //no es necesario el nombre de la ta
 	        campos[n][reg[n]] = res;
 	    }
 	}
-
 }
 
 

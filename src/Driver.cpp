@@ -129,34 +129,46 @@ Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el 
             res.push_back(reg);
         }
 
-    }/*else if(q.tipo_consulta() == INTER){
-        sub1 = consultar(q.subconsulta1());
-        Respuesta sub2 = consultar(q.subconsulta2());
+    }else if(q.tipo_consulta() == INTER){
 
-
-        for(Registro reg1 : sub1){
-            for(Registro reg2 : sub2){
-
-                if(q.subconsulta1().tipo_consulta() == FROM && q.subconsulta2().tipo_consulta() == FROM){
-                    if(reg1 == reg2){
-                        res.push_back(reg1);
+        if(q.subconsulta1().tipo_consulta() == FROM && q.subconsulta2().tipo_consulta() == FROM) {
+            Tabla t1 = DiccTablas[q.subconsulta1().nombre_tabla()];
+            Tabla t2 = DiccTablas[q.subconsulta2().nombre_tabla()];
+            DiccValores campo1 = t1.DiccCampos()[t1.campoClave()];
+            DiccValores campo2 = t2.DiccCampos()[t2.campoClave()];
+            if (campo1.size() < campo2.size()) {
+                vector<Registro> vecR = t1.registrosTotales();
+                for (int i = 0; i < vecR.size(); ++i) {
+                    if (campo2.count(vecR[i][t1.campoClave()]) == 1) {
+                        Registro r1 = campo1[vecR[i][t1.campoClave()]][0];
+                        Registro r2 = campo2[vecR[i][t1.campoClave()]][0];
+                        if (r1 == r2) {
+                            res.push_back(r1);
+                        }
                     }
-                }else{
-                    NombreCampo c1 = q.subconsulta1().campo1();
-                    NombreCampo c2 = q.subconsulta2().campo1();
-                    Valor v1 = q.subconsulta1().valor();
-                    Valor v2 = q.subconsulta2().valor();
-
-                    if(reg1[c1] == v1 && reg1[c2] == v2){
-                        res.push_back(reg1);
-                    }
-                    if(reg2[c1] == v1 && reg2[c2] == v2){
-                        res.push_back(reg2);
+                }
+            } else {
+                vector<Registro> vecR = t2.registrosTotales();
+                for (int i = 0; i < vecR.size(); ++i) {
+                    if (campo1.count(vecR[i][t2.campoClave()]) == 1) {
+                        Registro r1 = campo1[vecR[i][t2.campoClave()]][0];
+                        Registro r2 = campo2[vecR[i][t2.campoClave()]][0];
+                        if (r1 == r2) {
+                            res.push_back(r1);
+                        }
                     }
                 }
             }
         }
-
+        sub1 = consultar(q.subconsulta1());
+        sub2 = consultar(q.subconsulta2());
+        for (int i = 0; i < sub1.size(); ++i) {
+            for (int j = 0; j < sub2.size(); ++j) {
+                if(sub1[i] == sub2[j]){
+                    res.push_back(sub1[i]);
+                }
+            }
+        }
     }else if(q.tipo_consulta() == UNION){
         res = consultar(q.subconsulta1());
         sub2 = consultar(q.subconsulta2());
@@ -205,7 +217,7 @@ Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el 
         //break;
         //case PRODUCT:
         //break;
-    */
+
 
     return res;
 }
