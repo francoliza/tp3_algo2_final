@@ -185,39 +185,6 @@ Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el 
             }
         }
     }
-            //buscamos en ese campo, ese valor y nos quedamos con los repeditos
-            //iteradores = *(DiccTablas[q.nombre_tabla()][q.campo1()][q.valor]);
-            //it_vector = DiccTablas[q.subConsulta].iteradores(q.campo1(),q.valor());
-            //(*DiccTablas[campos_totales[i]][valores[0]][0])[campos_totales[i]]
-        //break;
-//        //case MATCH:
-//
-//        //break;
-//        //case PROJ: // LA COMPLEJIDAD NO IMPORTA ACA
-//        //    //Registro tmp(q.conj_campos());
-//        //    //vector<NombreCampo> subcampoV(subcamposS.begin(),subcamposS.end())
-//        //    
-//        //    //subCampos(q.conj_campos().begin(), q.conj_campos().end());
-//        //    //cout << *(q.conj_campos().begin()) << endl;
-//        //    //for (Registro reg : sub1){
-//        //    //    Registro tmp();
-//        //    //    for (auto it = subCamposS.begin(); it != subCamposS.end(); ++it){
-//        //    //        tmp[*it] = sub1[*it];
-//        //    //    }
-//        //    //    res.push_back(tmp);
-//        //    //}
-//
-//
-        //break;
-        //case RENAME:
-        //break;
-        //case INTER:
-        //break;
-        //case UNION:
-        //break;
-        //case PRODUCT:
-        //break;
-
 
     return res;
 }

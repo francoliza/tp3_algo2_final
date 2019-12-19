@@ -2,7 +2,6 @@
 #include "../src/Tabla.h"
 
 TEST(test_1, tabla_tests){
-	cout << "/////////TABLA-TEST/////////" << endl;
 	NombreTabla datos = "datos personales";
 	NombreCampo clave = "apellido";
 

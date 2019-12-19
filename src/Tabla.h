@@ -26,18 +26,13 @@ public:
     vector< Registro > registros(NombreCampo campo, Valor nombre_valor);
 	void cambiar_campo(NombreCampo viejo, NombreCampo nuevo);
 	string_map<DiccValores> DiccCampos();
-	// ~Tabla();
-	// No es necesario el destructor(todavía)
-	//A modo de TEST, por ahora
-	//void printRegistro(NombreCampo campo_c, Valor valor_v);
+	//~Tabla();
 private:
 
-	// Pones el campo y te da mucha información
 	NombreTabla nombre_tabla;
 	NombreCampo campo_clave;
 	vector<NombreCampo> campos_totales; //ESPERA
 	vector<Registro> _registros; 		// Esto no entiendo muy bien pero bueno
-    DiccValores Valores;				// Lo usamos cuando insertamos valores un registro 
 	string_map<DiccValores> campos; 	// Las claves con campos, tranquilamente tambien se podria definir en insertar registro, su significado son diccionario que dado un valor nos devuelve el itarador al registro
 };
 
