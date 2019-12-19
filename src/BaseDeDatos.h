@@ -20,12 +20,11 @@ public:
 	void crearTabla(NombreTabla tabla, vector<NombreCampo> camposTotales,
                     NombreCampo clave);
 
-	Respuesta consultar(const Consulta& q);
+	Respuesta realizar_consulta(const Consulta& q);
 
-	//~BaseDeDatos();
 private:
 
-	string_map<Tabla> diccTablas;
+	string_map<Tabla> DiccTablas;
 	
 };
 

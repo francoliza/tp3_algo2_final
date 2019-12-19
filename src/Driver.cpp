@@ -28,10 +28,8 @@ void Driver::insertarRegistro(NombreTabla tabla, Registro r) {
     }
 }
 
-Respuesta Driver::consultar(const Consulta& q) { // simplemente nos devuelve el vector de registros resultante de la consulta
-    // ESTO FALTA 
-    // se mete en la tabla y luego se queda con sus registros
-    // COMPLETAR(consultar);
+Respuesta Driver::consultar(const Consulta& q) {
+
     Respuesta res;
     vector< vector<Registro>::iterator > it_vector;
     Respuesta sub1;

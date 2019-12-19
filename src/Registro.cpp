@@ -118,8 +118,6 @@ Registro Registro::concatenarRegistros(Registro reg1, Registro reg2) {
         tmp[*it] = reg1[*it];
     }
 
-    // PODRIA ELEMINAR LOS REPETIDOS TRANQUILAMENTE
-
     return tmp;
 }
 
