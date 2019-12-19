@@ -28,6 +28,13 @@ void Driver::insertarRegistro(NombreTabla tabla, Registro r) {
     }
 }
 
+//Complejidades a cumplir
+// SELECT CON CLAVE
+// SELECT SIN CLAVE
+// SELEC SIN CLAVE CON SELECT CON CLAVE
+// JOIN CON CLAVES
+// INTER
+
 Respuesta Driver::consultar(const Consulta& q) {
 
     Respuesta res;
